@@ -8,9 +8,9 @@ pipeline {
   }
  stage('Provision infrastructure') {
  steps {
- sh "/usr/bin/terraform init"
- sh "/usr/bin/terraform plan -out=plan"
- sh "/usr/bin/terraform apply plan"
+ sh "/usr/local/bin/terraform init"
+ sh "/usr/local/bin/terraform plan -out=plan"
+ sh "/usr/local/bin/terraform apply plan"
  }
 }
 }
