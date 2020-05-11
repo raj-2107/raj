@@ -4,9 +4,9 @@ provider "aws" {
   secret_key = var.secret-key
   region     = "ap-south-1"
 }
-data "aws_availability_zones" "all" {
-    state = "available"
-}
+#data "aws_availability_zones" "all" {
+ #   state = "available"
+#}
 
 ###  EC2 instance
 resource "aws_instance" "web" {
@@ -86,7 +86,7 @@ resource "aws_security_group" "elb" {
 resource "aws_elb" "example" {
   name = "terraform-asg-example"
   security_groups = ["${aws_security_group.elb.id}"]
-  availability_zones = ["element(data.aws_availability_zones.all.names,count.index)"]
+  availability_zones = ["ap-south-1a", "ap-south-1b"]
   health_check  {
     healthy_threshold = 2
     unhealthy_threshold = 2
