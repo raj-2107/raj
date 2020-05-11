@@ -11,7 +11,6 @@ pipeline {
  sh "/usr/local/bin/terraform init"
  sh "/usr/local/bin/terraform plan -out=plan"
  sh "/usr/local/bin/terraform apply plan"
- sh "/usr/local/bin/terraform destroy -auto-approve"
 }
 }
 }
