@@ -7,7 +7,8 @@ pipeline {
     }
   }
 
-node {
+  stage('credentials') {
+    steps {
     withCredentials([string(credentialsId: 'ACCESS_KEY_ID', variable: 'SECRET')]) { //set SECRET with the credential content
         echo "My secret text is '${SECRET}'"
     }
@@ -15,7 +16,9 @@ node {
  withCredentials([string(credentialsId: 'SECRET_ACCESS_KEY_ID', variable: 'SECRET')]) { //set SECRET with the credential content
         echo "My secret text is '${SECRET}'"
     }
+   }
 }
+
 
  stage('Provision infrastructure') {
  steps {
@@ -27,3 +30,4 @@ node {
 }
 }
 }
+
