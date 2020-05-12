@@ -2,9 +2,6 @@ variable "region" {
   description = "AWS region for hosting our your network"
   default = "ap-south-1"
 }
-variable "access-key" {}
-
-variable "secret-key" {}
 
 variable "public_key_path" {
   description = "Enter the path to the SSH Public Key to add to AWS."

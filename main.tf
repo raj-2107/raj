@@ -1,7 +1,7 @@
 provider "aws" {
   version = "~> 2.61"
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_ACCESS_KEY
+  shared_credentials_file = "/home/ec2-user/.aws/credentials"
+  profile                 = "myprofile"
   region     = "ap-south-1"
 }
 #data "aws_availability_zones" "all" {
