@@ -1,7 +1,7 @@
 provider "aws" {
   version = "~> 2.61"
-  shared_credentials_file = "/home/ec2-user/.aws/credentials"
-  profile                 = "myprofile"
+ shared_credentials_file = "/var/lib/jenkins/.aws/credentials"
+  profile                 = "jenkins"
   region     = "ap-south-1"
 }
 #data "aws_availability_zones" "all" {
